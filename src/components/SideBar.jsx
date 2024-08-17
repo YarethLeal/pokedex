@@ -12,7 +12,7 @@ const SideBar = () => {
             const data = await getListPokemons(offset, limit);
             setRangeList(data.next);
             const pokemons = await getInfoList(data.results);
-            setListPokemon((...prev) => [...prev, ...pokemons]);
+            setListPokemon((prev) => [...prev, ...pokemons]);
         } catch (error) {
             console.error(error);
         }
@@ -24,6 +24,7 @@ const SideBar = () => {
         <div>
             <div className='sidebar'>
                 {listPokemon.map((pokemon) => {
+                    console.log(pokemon);
                     return (
                         <SideBarItem
                             image={pokemon.image}

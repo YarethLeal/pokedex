@@ -1,11 +1,13 @@
 import React from 'react';
 
-const SideBarItem = ({image,name,number}) => {
+const SideBarItem = ({ image, name, number }) => {
     return (
         <div className='sidebar-item'>
-            <img src={image} alt={name+' icon'} />
-            <p>{name}</p>
-            <p>{number}</p>
+            <div>
+                <img src={image} alt={name + ' icon'} />
+                <p className='sidebar-text'>{name}</p>
+                <p className='sidebar-number'>#{number}</p>
+            </div>
         </div>
     );
 };
