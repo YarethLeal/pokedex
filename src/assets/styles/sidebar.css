@@ -27,7 +27,7 @@
 }
 
 .sidebar-item:hover{
-    background-color: #730909;
+    background-color: #970d0d;
 }
 
 .sidebar-item div{
@@ -41,4 +41,18 @@
 .sidebar-item .sidebar-number{
     margin-left: auto;
     margin-right: 10px;
+}
+
+.sidebar ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li{
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar ul li.active{
+    background-color: #730909;
 }

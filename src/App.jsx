@@ -1,14 +1,13 @@
 import { useState } from 'react'
-// import './App.css'
 import SideBar from './components/SideBar'
 
 function App() {
-
+  const [currentPokemon, setCurrentPokemon] = useState(1)
 
   return (
     <>
-      <SideBar />
-      <main></main>
+      <SideBar activePokemon={currentPokemon} setActive={setCurrentPokemon}/>
+      <main>{currentPokemon}</main>
     </>
   )
 }

@@ -3,7 +3,7 @@ import SideBarItem from './SideBarItem';
 import { getListPokemons, getInfoList } from '../utils/fetchPokemon';
 import '../assets/styles/sidebar.css';
 
-const SideBar = () => {
+const SideBar = ({ activePokemon, setActive }) => {
     const [listPokemon, setListPokemon] = useState([]);
     const [nextRangeList, setRangeList] = useState("");
 
@@ -23,16 +23,20 @@ const SideBar = () => {
     return (
         <div>
             <div className='sidebar'>
-                {listPokemon.map((pokemon) => {
-                    console.log(pokemon);
-                    return (
-                        <SideBarItem
-                            image={pokemon.image}
-                            name={pokemon.name}
-                            number={pokemon.number}
-                        />
-                    );
-                })}
+                <ul>
+                    {listPokemon.map((pokemon) => {
+                        const liClassName = pokemon.number === activePokemon ? 'active' : '';
+                        return (
+                            <li className={liClassName} key={pokemon.number} onClick={() => setActive(pokemon.number)}>
+                                <SideBarItem
+                                    image={pokemon.image}
+                                    name={pokemon.name}
+                                    number={pokemon.number}
+                                />
+                            </li>
+                        );
+                    })}
+                </ul>
             </div>
         </div>
     );
