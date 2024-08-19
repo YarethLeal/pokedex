@@ -12,3 +12,7 @@ export async function getInfoList(pokemons) {
     });
     return Promise.all(promises);
 }
+export async function getPokemonInfo(pokemonId) {
+    const pokemon = await fetchPokemonById(pokemonId);
+    return pokeDataList(pokemon);
+}
