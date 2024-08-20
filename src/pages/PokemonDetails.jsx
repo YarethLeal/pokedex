@@ -32,9 +32,10 @@ const PokemonDetails = ({ activePokemon }) => {
 
     return (
         <div className='pokemon-details'>
-            {pokemon && <PokemonInfo pokemonSpecie={pokemon} />}
-            <hr />
-            {pokemon && <PokemonEvoTree evoTree={pokemon.evolution_chain} />}
+            <div className='layout'>
+                {pokemon && <PokemonInfo pokemonSpecie={pokemon} />}
+                {pokemon && <PokemonEvoTree evoTree={pokemon.evolution_chain} />}
+            </div>
         </div>
     );
 };
