@@ -1,26 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PokemonInfo from '../components/PokemonInfo';
 import PokemonEvoTree from '../components/PokeEvoTree';
 import '../assets/styles/pokedetails.css';
-import { getPokemonInfo } from '../utils/fetchPokemon';
+import { getPokemonSpecies } from '../utils/fetchPokemon';
 
 const PokemonDetails = ({ activePokemon }) => {
+    const [pokemon, setPokemon] = useState(null);
+    const [loading, setLoading] = useState(true);
+
     const getPokemon = async () => {
         try {
-            const pokemon = await getPokemonInfo(activePokemon);
-            document.title = `Pokemon - ${pokemon.name}`;
+            const pokemonData = await getPokemonSpecies(activePokemon);
+            setPokemon(pokemonData);
+            document.title = `Pokemon - ${pokemonData.name}`;
         } catch (error) {
             console.error(error);
+        } finally {
+            setLoading(false);
         }
     };
     useEffect(() => {
-        getPokemon();
+        if (activePokemon) {
+            setLoading(true);
+            getPokemon();
+        }
     }, [activePokemon]);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div className='pokemon-details'>
-            <PokemonInfo />
+            {pokemon && <PokemonInfo pokemonSpecie={pokemon} />}
             <hr />
-            <PokemonEvoTree />
+            {/* <PokemonEvoTree evoTree={pokemon.evolution_chain} /> */}
         </div>
     );
 };

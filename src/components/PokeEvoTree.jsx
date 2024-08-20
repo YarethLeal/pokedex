@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PokemonEvoTree = () => {
+const PokemonEvoTree = ({evoTree}) => {
     return (
         <div>
             {/* Add your code here */}

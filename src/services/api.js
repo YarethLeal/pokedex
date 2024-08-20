@@ -25,4 +25,27 @@ async function fetchPokemonById(id) {
     }
 }
 
-export { fetchPokemons, fetchPokemonById };
+// Function to fetch a single pokemon specie by ID or Name
+async function fetchPokemonSpecie(id) {
+    try {
+        const response = await fetch(`${API_URL}pokemon-species/${id}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(`Error fetching contact with ID ${id}:`, error);
+        throw error;
+    }
+}
+
+// Function to fetch a single pokemon specie by ID or Name
+async function fetchPokemonEvoChain(evolution_chain) {
+    try {
+        const response = await fetch(evolution_chain.url);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(`Error fetching contact with ID ${id}:`, error);
+        throw error;
+    }
+}
+export { fetchPokemons, fetchPokemonById, fetchPokemonSpecie, fetchPokemonEvoChain };
