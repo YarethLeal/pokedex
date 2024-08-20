@@ -6,6 +6,8 @@ import '../assets/styles/sidebar.css';
 const SideBar = ({ activePokemon, setActive }) => {
     const [listPokemon, setListPokemon] = useState([]);
     const [nextRangeList, setRangeList] = useState("");
+    const [loading, setLoading] = useState(true);
+    const hasFetched = useRef(false); // Flag to prevent double fetching
 
     const getPokemons = async (offset = 0, limit = 20) => {
         try {
@@ -15,11 +17,19 @@ const SideBar = ({ activePokemon, setActive }) => {
             setListPokemon((prev) => [...prev, ...pokemons]);
         } catch (error) {
             console.error(error);
+        } finally {
+            setLoading(false);
         }
     };
     useEffect(() => {
-        getPokemons();
+        if (!hasFetched.current) {
+            getPokemons();
+            hasFetched.current = true;
+        }
     }, []);
+    if (loading) {
+        return <div>Loading...</div>;
+    }
     return (
         <div>
             <div className='sidebar'>

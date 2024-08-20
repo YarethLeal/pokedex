@@ -1,0 +1,14 @@
+.pokemon-details{
+    top: 20px;
+    margin: 0px 15px 15px 28%;
+    padding: 0px;
+    background-color: white;;
+    border-width: 3px;
+    border-color: #F28080;
+    border-style: solid;
+    border-radius: 10px;
+    position: fixed;
+    width: 70%;
+    height: 93%;
+    color: black;
+}
