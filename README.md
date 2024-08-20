@@ -16,6 +16,7 @@ Currently, two official plugins are available:
 <a href="#started">Getting Started</a>
 </p>
 
+![PokeApi](https://github.com/user-attachments/assets/f8c04708-1045-49a3-8660-7ddd3d600f59)
 
 <p align="center">This is a simple project for consuming the pokedex api</p>
 
@@ -62,3 +63,6 @@ How to start your project
 cd pokedex
 npm run dev
 ```
+
+<h3>Acknowledgment</h3>
+- [PokeApi](https://pokeapi.co/)
