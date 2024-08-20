@@ -12,11 +12,10 @@ Currently, two official plugins are available:
 <h1 align="center" style="font-weight: bold;">Pokedex 💻</h1>
 
 <p align="center">
-<a href="#tech">Technologies</a>
+<a href="#technologies">Technologies</a>
 <a href="#started">Getting Started</a>
+<a href="#howuse">How Use</a>
 </p>
-
-![PokeApi](https://github.com/user-attachments/assets/f8c04708-1045-49a3-8660-7ddd3d600f59)
 
 <p align="center">This is a simple project for consuming the pokedex api</p>
 
@@ -27,10 +26,7 @@ Currently, two official plugins are available:
  
 <h2 id="layout">🎨 Layout</h2>
 
-<p align="center">
-
-
-</p>
+![PokeApi](https://github.com/user-attachments/assets/f8c04708-1045-49a3-8660-7ddd3d600f59)
  
 <h2 id="technologies">💻 Technologies</h2>
 
@@ -64,5 +60,21 @@ cd pokedex
 npm run dev
 ```
 
+<h2 id="howuse">💻 How use</h2>
+
+Simple to use
+Steps:
+- Click on the pokemon you want to see
+- Want to see more? You can scroll to continue loading more pokemon.
+- Want to search? Click on the search symbol to expand or shrink the search box.
+
+Easy right?
+The pokemon list is loaded as you want to continue searching, this is to avoid unnecessary calls to the api.
+
 <h3>Acknowledgment</h3>
-- [PokeApi](https://pokeapi.co/)
+
+<a href="https://pokeapi.co/" target="_blank">PokeApi</a>
+
+<h3>Apologies</h3>
+This project was made as part of a test with a time limit so some aspects of the design could not be done and in some devices the style is lost.
+As soon as I find time to fix this aspect I will delete this post.
