@@ -23,9 +23,10 @@
     gap: 8px;
 }
 
-.evo-tree{
+.evo-tree {
     text-align: center;
 }
+
 .evo-chart {
     width: 100%;
     display: flex;
@@ -37,4 +38,29 @@
     flex-grow: 1;
     display: block;
     text-align: center;
+}
+
+.pokemon-info {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemon-types {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+.capsule{
+    width: 100%;
+    background-color: #efaeae;
+    border-radius: 10px;
+}
+.pokemon-card{
+    text-align: center;
+    margin-right: 80px;
 }

@@ -27,27 +27,29 @@ const PokemonInfo = ({ pokemonSpecie }) => {
 
     return (
         <div className='pokemon-info'>
-            <div>
+            <div className='pokemon-card'>
                 <div>
-                    <img src={pokemon.image} alt={pokemon.name} width={64} height={64}/>
+                    <img src={pokemon.image} alt={pokemon.name} width={256} height={256} />
                 </div>
                 <div><h4>{pokemon.name}</h4></div>
-                <div>
+                <div className='pokemon-types'>
                     {
                         pokemon.types.split(',').map((type, index) => (
-                            <span key={index}>{type}</span>
+                            <div className='capsule'>
+                                <span className='capsule' key={index}>{type}</span>
+                            </div>
                         ))
                     }
                 </div>
             </div>
-            <div>
+            <div className='information'>
                 <h3>Information</h3>
                 <div>
-                    <span>Weight: {pokemon.weight}</span>
-                    <span>Height: {pokemon.height}</span>
-                    <span>Species: {pokemonSpecie.genera}</span>
-                    <span>Egg Groups: {pokemonSpecie.egg_group}</span>
-                    <span>Abilities: {pokemon.abilities}</span>
+                    <p><strong>Weight:</strong> {pokemon.weight}</p>
+                    <p><strong>Height:</strong> {pokemon.height}</p>
+                    <p><strong>Species:</strong> {pokemonSpecie.genera}</p>
+                    <p><strong>Egg Groups:</strong> {pokemonSpecie.egg_group}</p>
+                    <p><strong>Abilities:</strong> {pokemon.abilities}</p>
                 </div>
             </div>
         </div>
