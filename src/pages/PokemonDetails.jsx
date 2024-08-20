@@ -3,8 +3,9 @@ import PokemonInfo from '../components/PokemonInfo';
 import PokemonEvoTree from '../components/PokeEvoTree';
 import '../assets/styles/pokedetails.css';
 import { getPokemonSpecies } from '../utils/fetchPokemon';
+import SearchBar from '../components/SearchBar';
 
-const PokemonDetails = ({ activePokemon }) => {
+const PokemonDetails = ({ activePokemon, searchTerm, setSearchTerm }) => {
     const [pokemon, setPokemon] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -12,7 +13,6 @@ const PokemonDetails = ({ activePokemon }) => {
         try {
             const pokemonData = await getPokemonSpecies(activePokemon);
             setPokemon(pokemonData);
-            document.title = `Pokemon - ${pokemonData.name}`;
         } catch (error) {
             console.error(error);
         } finally {
@@ -32,6 +32,7 @@ const PokemonDetails = ({ activePokemon }) => {
 
     return (
         <div className='pokemon-details'>
+            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <div className='layout'>
                 {pokemon && <PokemonInfo pokemonSpecie={pokemon} />}
                 {pokemon && <PokemonEvoTree evoTree={pokemon.evolution_chain} />}
