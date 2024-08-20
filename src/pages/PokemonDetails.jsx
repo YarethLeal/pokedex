@@ -12,7 +12,6 @@ const PokemonDetails = ({ activePokemon }) => {
         try {
             const pokemonData = await getPokemonSpecies(activePokemon);
             setPokemon(pokemonData);
-            document.title = `Pokemon - ${pokemonData.name}`;
         } catch (error) {
             console.error(error);
         } finally {

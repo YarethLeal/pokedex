@@ -4,7 +4,7 @@ const API_URL = 'https://pokeapi.co/api/v2/';
 // Function to fetch all contacts
 async function fetchPokemons(offset = 0, limit = 20) {
     try {
-        const response = await fetch(`${API_URL}pokemon/`);
+        const response = await fetch(`${API_URL}pokemon/?limit=${limit}&offset=${offset}`);
         const data = await response.json();
         return data;
     } catch (error) {

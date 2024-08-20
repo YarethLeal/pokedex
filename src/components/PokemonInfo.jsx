@@ -35,8 +35,8 @@ const PokemonInfo = ({ pokemonSpecie }) => {
                 <div className='pokemon-types'>
                     {
                         pokemon.types.split(',').map((type, index) => (
-                            <div className='capsule'>
-                                <span className='capsule' key={index}>{type}</span>
+                            <div className='capsule' key={index}>
+                                <span className='capsule'>{type}</span>
                             </div>
                         ))
                     }

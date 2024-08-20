@@ -55,6 +55,7 @@
 .sidebar ul li {
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 
 .sidebar ul li.active {
