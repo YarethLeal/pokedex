@@ -24,13 +24,21 @@ const PokemonInfo = ({ pokemonSpecie }) => {
     if (loading) {
         return <div>Loading...</div>;
     }
-    
+
     return (
         <div className='pokemon-info'>
             <div>
-                <div>Image</div>
-                <div>Name</div>
-                <div>Types</div>
+                <div>
+                    <img src={pokemon.image} alt={pokemon.name} width={64} height={64}/>
+                </div>
+                <div><h4>{pokemon.name}</h4></div>
+                <div>
+                    {
+                        pokemon.types.split(',').map((type, index) => (
+                            <span key={index}>{type}</span>
+                        ))
+                    }
+                </div>
             </div>
             <div>
                 <h3>Information</h3>

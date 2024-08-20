@@ -40,11 +40,11 @@ async function fetchPokemonSpecie(id) {
 // Function to fetch a single pokemon specie by ID or Name
 async function fetchPokemonEvoChain(evolution_chain) {
     try {
-        const response = await fetch(evolution_chain.url);
+        const response = await fetch(`${evolution_chain}`);
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error(`Error fetching contact with ID ${id}:`, error);
+        console.error(error);
         throw error;
     }
 }
