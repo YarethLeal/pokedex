@@ -3,7 +3,7 @@ import SideBarItem from './SideBarItem';
 import { getListPokemons, getInfoList } from '../utils/fetchPokemon';
 import '../assets/styles/sidebar.css';
 
-const SideBar = ({ activePokemon, setActive }) => {
+const SideBar = ({ activePokemon, setActive, searchTerm }) => {
     const [listPokemon, setListPokemon] = useState([]);
     const [nextRangeList, setRangeList] = useState("");
     const [loading, setLoading] = useState(true);
@@ -50,6 +50,10 @@ const SideBar = ({ activePokemon, setActive }) => {
         }
     }, [handleScroll]);
 
+    const filteredPokemon = listPokemon.filter((pokemon) =>
+        pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     if (loading && listPokemon.length === 0) {
         return <div>Loading...</div>;
     }
@@ -58,7 +62,7 @@ const SideBar = ({ activePokemon, setActive }) => {
         <div>
             <div className='sidebar' ref={sidebarRef}>
                 <ul>
-                    {listPokemon.map((pokemon) => {
+                    {filteredPokemon.map((pokemon) => {
                         const liClassName = pokemon.number === activePokemon ? 'active' : '';
                         return (
                             <li className={liClassName} key={pokemon.number} onClick={() => setActive(pokemon.number)}>
